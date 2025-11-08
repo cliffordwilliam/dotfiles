@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SSH_KEY_PATH="$HOME/.ssh/id_ed25519"
-KEY_TITLE="$(cut -c1-8 /etc/machine-id)-$(hostname)"
+KEY_TITLE="$(cut -c1-8 /etc/machine-id)-$(cat /etc/hostname)"
 
 git config --global core.editor "nvim"
 git config --global user.name "Clifford William"
