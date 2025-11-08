@@ -20,7 +20,6 @@ require("lazy").setup({
     name = "catppuccin",
     priority = 1000,
     config = function()
-      transparent_background = true,
       vim.cmd.colorscheme("catppuccin")
     end,
   },
