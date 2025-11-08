@@ -20,11 +20,4 @@ if ! gh auth status >/dev/null 2>&1; then
   gh auth login
 fi
 
-EXISTING_KEY_ID=$(gh ssh-key list --json id,title -q ".[] | select(.title==\"$KEY_TITLE\") | .id")
-if [[ -n "$EXISTING_KEY_ID" ]]; then
-  gh ssh-key delete "$EXISTING_KEY_ID" --confirm
-fi
-
-gh ssh-key add "$SSH_KEY_PATH.pub" --title "$KEY_TITLE"
-
 echo "Git and GitHub setup complete!"
