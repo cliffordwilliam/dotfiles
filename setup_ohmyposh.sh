@@ -9,6 +9,10 @@ BASHRC="$HOME_DIR/.bashrc"
 
 curl -s https://ohmyposh.dev/install.sh | bash -s
 
+if ! grep -Fxq 'export PATH=$PATH:$HOME/.local/bin' "$BASHRC"; then
+    echo 'export PATH=$PATH:$HOME/.local/bin' >> "$BASHRC"
+fi
+
 export PATH=$PATH:$HOME/.local/bin
 
 eval "$(oh-my-posh init bash)"
