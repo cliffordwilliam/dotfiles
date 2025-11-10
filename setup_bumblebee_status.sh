@@ -15,7 +15,8 @@ bar {
 EOF
 )
 
-mkdir -p "$BUMBLE_DIR" "$I3CONF"
+mkdir -p "$(dirname "$BUMBLE_DIR")"
+mkdir -p "$(dirname "$I3CONF")"
 
 if [ -d "$BUMBLE_DIR/.git" ]; then
     git -C "$BUMBLE_DIR" fetch --all
