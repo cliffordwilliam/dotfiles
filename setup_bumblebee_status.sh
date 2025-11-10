@@ -30,6 +30,6 @@ touch "$I3CONF"
 
 sed -i '/^bar\s*{/,/^}/d' "$I3CONF"
 
-grep -Fqx "$BAR_BLOCK" "$I3CONF" || printf "\n%s\n" "$BAR_BLOCK" >> "$I3CONF"
+printf "\n%s\n" "$BAR_BLOCK" >> "$I3CONF"
 
 echo "Done"
