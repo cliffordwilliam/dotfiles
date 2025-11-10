@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 PICOM_CONF_DIR="$HOME/.config/picom"
@@ -27,4 +27,4 @@ touch "$XINITRC"
 sed -i '/picom/d' "$XINITRC"
 sed -i "1i $PICOM_CMD" "$XINITRC"
 
-echo "Picom setup complete"
+echo "Done"

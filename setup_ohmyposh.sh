@@ -9,9 +9,9 @@ BASHRC="$HOME_DIR/.bashrc"
 
 curl -s https://ohmyposh.dev/install.sh | bash -s
 
-if ! grep -Fxq 'export PATH=$PATH:$HOME/.local/bin' "$BASHRC"; then
-    echo 'export PATH=$PATH:$HOME/.local/bin' >> "$BASHRC"
-fi
+sed -i '\|^export PATH=$PATH:$HOME/.local/bin|d' "$TMUX_CONF"
+
+echo 'export PATH=$PATH:$HOME/.local/bin' >> "$BASHRC"
 
 export PATH=$PATH:$HOME/.local/bin
 
@@ -23,11 +23,9 @@ mkdir -p "$CONFIG_DIR"
 
 curl -fsSL https://raw.githubusercontent.com/cliffordwilliam/dotfiles/main/catppuccin_mocha.omp.json -o "$CONFIG_FILE"
 
-EVAL_LINE="eval \"\$(oh-my-posh init bash --config $CONFIG_FILE)\""
-if ! grep -Fxq "$EVAL_LINE" "$BASHRC"; then
-    echo "$EVAL_LINE" >> "$BASHRC"
-fi
+sed -i "\|^eval \"\$(oh-my-posh init bash --config $CONFIG_FILE)\"$|d" "$BASHRC"
+echo "eval \"\$(oh-my-posh init bash --config $CONFIG_FILE)\"" >> "$BASHRC"
 
-echo "Success! Reloading Bash..."
+echo "Done"
 exec bash
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 IMG_NAME="b-422.jpg"
@@ -20,5 +20,4 @@ sed -i '/feh --bg-fill/d' "$XINITRC"
 
 sed -i "1i $FEH_CMD" "$XINITRC"
 
-echo "Done! Your background will be set when you start X."
-
+echo "Done"

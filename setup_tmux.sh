@@ -18,14 +18,10 @@ else
 fi
 
 mkdir -p "$CONFIG_DIR"
+touch "$TMUX_CONF"
 
-if [ ! -f "$TMUX_CONF" ]; then
-    touch "$TMUX_CONF"
-fi
+sed -i '/catppuccin\.tmux/d' "$TMUX_CONF"
 
-if ! grep -Fxq "$RUN_LINE" "$TMUX_CONF"; then
-    echo "$RUN_LINE" >> "$TMUX_CONF"
-fi
+echo "$RUN_LINE" >> "$TMUX_CONF"
 
-echo "Done!"
-
+echo "Done"

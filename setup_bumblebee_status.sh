@@ -28,11 +28,8 @@ fi
 
 touch "$I3CONF"
 
-if grep -qE '^bar\s*{' "$I3CONF"; then
-    sed -i '/^bar\s*{/,/^}/d' "$I3CONF"
-fi
+sed -i '/^bar\s*{/,/^}/d' "$I3CONF"
 
 printf "\n%s\n" "$BAR_BLOCK" >> "$I3CONF"
 
-echo "Done! Bumblebee-status configured in $I3CONF"
-
+echo "Done"
