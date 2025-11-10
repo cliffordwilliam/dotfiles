@@ -16,8 +16,6 @@ curl -L "$IMG_URL" -o "$IMG_PATH"
 
 touch "$XINITRC"
 
-sed -i '/feh --bg-fill/d' "$XINITRC"
-
-sed -i "1i $FEH_CMD" "$XINITRC"
+grep -qxF "$FEH_CMD" "$XINITRC" || echo "$FEH_CMD" >> "$XINITRC"
 
 echo "Done"

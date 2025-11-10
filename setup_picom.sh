@@ -10,7 +10,8 @@ sudo pacman -Sy --noconfirm picom
 
 mkdir -p "$PICOM_CONF_DIR"
 
-cat > "$PICOM_CONF" <<'EOF'
+if [ ! -f "$PICOM_CONF" ]; then
+    cat > "$PICOM_CONF" <<'EOF'
 backend = "glx";
 fading = true;
 fade-in-step = 0.08;
@@ -22,9 +23,10 @@ blur-method = "dual_kawase";
 strength = 2;
 vsync = true;
 EOF
+fi
 
 touch "$XINITRC"
-sed -i '/picom/d' "$XINITRC"
-sed -i "1i $PICOM_CMD" "$XINITRC"
+
+grep -qxF "$PICOM_CMD" "$XINITRC" || echo "$PICOM_CMD" >> "$XINITRC"
 
 echo "Done"

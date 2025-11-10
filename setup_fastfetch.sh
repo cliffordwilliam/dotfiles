@@ -13,8 +13,8 @@ mkdir -p "$IMG_DIR"
 
 curl -L "$IMG_URL" -o "$IMG_PATH"
 
-sed -i "\|^fastfetch$|d" "$BASHRC"
+FASTFETCH_LINE="fastfetch --logo \"$IMG_PATH\" --logo-type kitty-direct --logo-padding-left 1 --logo-padding-right 1 --logo-padding-top 1"
 
-echo "fastfetch --logo \"$IMG_PATH\" --logo-type kitty-direct --logo-padding-left 1 --logo-padding-right 1 --logo-padding-top 1" >> "$BASHRC"
+grep -qxF "$FASTFETCH_LINE" "$BASHRC" || echo "$FASTFETCH_LINE" >> "$BASHRC"
 
 echo "Done"

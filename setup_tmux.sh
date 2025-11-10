@@ -20,8 +20,6 @@ fi
 mkdir -p "$CONFIG_DIR"
 touch "$TMUX_CONF"
 
-sed -i '/catppuccin\.tmux/d' "$TMUX_CONF"
-
-echo "$RUN_LINE" >> "$TMUX_CONF"
+grep -qxF "$RUN_LINE" "$TMUX_CONF" || echo "$RUN_LINE" >> "$TMUX_CONF"
 
 echo "Done"

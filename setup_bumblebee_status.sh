@@ -15,8 +15,7 @@ bar {
 EOF
 )
 
-mkdir -p "$(dirname "$BUMBLE_DIR")"
-mkdir -p "$(dirname "$I3CONF")"
+mkdir -p "$BUMBLE_DIR" "$I3CONF"
 
 if [ -d "$BUMBLE_DIR/.git" ]; then
     git -C "$BUMBLE_DIR" fetch --all
@@ -30,6 +29,6 @@ touch "$I3CONF"
 
 sed -i '/^bar\s*{/,/^}/d' "$I3CONF"
 
-printf "\n%s\n" "$BAR_BLOCK" >> "$I3CONF"
+grep -Fqx "$BAR_BLOCK" "$I3CONF" || printf "\n%s\n" "$BAR_BLOCK" >> "$I3CONF"
 
 echo "Done"
