@@ -16,6 +16,11 @@ curl -L "$IMG_URL" -o "$IMG_PATH"
 
 touch "$XINITRC"
 
-grep -qxF "$FEH_CMD" "$XINITRC" || echo "$FEH_CMD" >> "$XINITRC"
+if ! grep -qxF "$FEH_CMD" "$XINITRC"; then
+  tmp=$(mktemp)
+  printf '%s\n' "$FEH_CMD" > "$tmp"
+  cat "$XINITRC" >> "$tmp"
+  mv "$tmp" "$XINITRC"
+fi
 
 echo "Done"
