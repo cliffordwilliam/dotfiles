@@ -15,8 +15,7 @@ bar {
 EOF
 )
 
-mkdir -p "$(dirname "$BUMBLE_DIR")"
-mkdir -p "$(dirname "$I3CONF")"
+mkdir -p "$BUMBLE_DIR"
 
 if [ -d "$BUMBLE_DIR/.git" ]; then
     git -C "$BUMBLE_DIR" fetch --all
@@ -26,6 +25,7 @@ else
     git clone -b "$BRANCH" "$REPO_URL" "$BUMBLE_DIR"
 fi
 
+mkdir -p "$(dirname "$I3CONF")"
 touch "$I3CONF"
 
 sed -i '/^bar\s*{/,/^}/d' "$I3CONF"
