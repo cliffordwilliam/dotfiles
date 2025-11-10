@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-IMG_NAME="b-422.jpg"
+IMG_NAME="b-422.png"
 IMG_URL="https://raw.githubusercontent.com/cliffordwilliam/dotfiles/main/$IMG_NAME"
 IMG_DIR="$HOME/images"
 IMG_PATH="$IMG_DIR/$IMG_NAME"
