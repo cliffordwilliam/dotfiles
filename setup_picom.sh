@@ -27,6 +27,11 @@ fi
 
 touch "$XINITRC"
 
-grep -qxF "$PICOM_CMD" "$XINITRC" || echo "$PICOM_CMD" >> "$XINITRC"
+grep -qxF "$PICOM_CMD" "$XINITRC" || {
+  tmp=$(mktemp)
+  printf '%s\n' "$PICOM_CMD" > "$tmp"
+  cat "$XINITRC" >> "$tmp"
+  mv "$tmp" "$XINITRC"
+}
 
 echo "Done"
