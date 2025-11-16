@@ -1,9 +1,6 @@
 vim.g.mapleader = " "
 vim.opt.number = true
 vim.opt.wrap = false
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.uv.fs_stat(lazypath) then
@@ -17,23 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   {
     'lewis6991/gitsigns.nvim',
-  },
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme("catppuccin")
-    end,
-  },
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("lualine").setup({
-        options = { theme = "catppuccin" }
-      })
-    end,
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -54,7 +34,6 @@ require("lazy").setup({
     opts = {
       auto_install = true,
       highlight = { enable = true },
-      indent = { enable = true },
     },
   },
   {
@@ -101,8 +80,6 @@ require("lazy").setup({
         },
         completion = { completeopt = "menu,menuone,noinsert" },
         mapping = cmp.mapping.preset.insert({
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-y>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = {
