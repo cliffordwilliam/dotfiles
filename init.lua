@@ -11,11 +11,9 @@ if not vim.uv.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-  {
-    'lewis6991/gitsigns.nvim',
-  },
-  {
+require("lazy").setup(
+  {  
+    {
     "nvim-telescope/telescope.nvim",
     event = "VimEnter",
     dependencies = {
