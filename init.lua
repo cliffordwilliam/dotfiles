@@ -23,6 +23,8 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+vim.cmd("colorscheme Tomorrow-Night-Blue")
+
 require("lazy").setup({
   {
     "nvim-telescope/telescope.nvim",
