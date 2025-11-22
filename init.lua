@@ -25,15 +25,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
-    "chriskempson/tomorrow-theme",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd("colorscheme Tomorrow-Night-Blue")
-    end,
-  },
-    
-  {
     "nvim-telescope/telescope.nvim",
     event = "VimEnter",
     dependencies = { "nvim-lua/plenary.nvim" },
