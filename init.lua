@@ -78,26 +78,6 @@ require("lazy").setup({
   },
 
   {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    config = function()
-      require("toggleterm").setup({
-        size = 20,
-        open_mapping = [[<leader>t]],
-        hide_numbers = true,
-        shade_terminals = true,
-        start_in_insert = true,
-        insert_mappings = true,
-        terminal_mappings = true,
-        direction = "horizontal",
-      })
-
-      vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
-      vim.keymap.set("t", "<leader>t", [[<Cmd>ToggleTerm<CR>]])
-    end,
-  },
-
-  {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     main = "nvim-treesitter.configs",
