@@ -4,6 +4,7 @@ vim.opt.number = true
 vim.opt.wrap = false
 vim.opt.ignorecase = false
 vim.opt.smartcase = false
+vim.opt.showmode = false
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.uv.fs_stat(lazypath) then
