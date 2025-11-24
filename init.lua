@@ -6,6 +6,8 @@ vim.opt.ignorecase = false
 vim.opt.smartcase = false
 vim.opt.showmode = false
 vim.opt.laststatus = 0
+vim.opt.cmdheight = 0
+vim.opt.ruler = false
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.uv.fs_stat(lazypath) then
