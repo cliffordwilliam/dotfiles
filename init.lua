@@ -44,32 +44,20 @@ require("lazy").setup({
             "--line-number",
             "--column",
             "--case-sensitive",
-          },
-        },
-        pickers = {
-          live_grep = {
-            additional_args = function()
-              return { "--case-sensitive", "--fixed-strings", "--hidden" }
-            end,
-          },
-          find_files = {
-            hidden = true,
+	    "--fixed-strings",
           },
         },
       })
-
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader>ff", builtin.find_files)
       vim.keymap.set("n", "<leader>fg", builtin.live_grep)
-
       vim.keymap.set("n", "<leader>fG", function()
         builtin.live_grep({
           additional_args = function()
-            return { "--case-sensitive", "--hidden", "--no-ignore" }
+            return { "--hidden", "--no-ignore" }
           end,
         })
       end)
-
       vim.keymap.set("n", "<leader>fF", function()
         builtin.find_files({
           hidden = true,
