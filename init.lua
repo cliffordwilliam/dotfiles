@@ -44,7 +44,7 @@ require("lazy").setup({
             "--line-number",
             "--column",
             "--case-sensitive",
-	    "--fixed-strings",
+            "--fixed-strings",
           },
         },
       })
