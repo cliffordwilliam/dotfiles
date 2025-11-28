@@ -92,6 +92,7 @@ require("lazy").setup({
           vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = event.buf })
           vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { buffer = event.buf })
           vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { buffer = event.buf })
+          vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = event.buf })
         end,
       })
 
