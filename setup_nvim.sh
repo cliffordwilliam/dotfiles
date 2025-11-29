@@ -13,6 +13,8 @@ mkdir -p ~/.config/nvim
 
 curl -fsSL https://raw.githubusercontent.com/cliffordwilliam/dotfiles/main/init.lua -o ~/.config/nvim/init.lua
 
+mkdir -p ~/.config/nvim/colors
+
 curl -fsSL https://raw.githubusercontent.com/cliffordwilliam/dotfiles/main/Tomorrow-Night-Blue.vim -o ~/.config/nvim/colors/Tomorrow-Night-Blue.vim
 
 echo "Done"
