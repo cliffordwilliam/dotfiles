@@ -1,6 +1,5 @@
 {
     "window.customTitleBarVisibility": "windowed",
-    "zenMode.showTabs": "none",
     "editor.cursorBlinking": "solid",
     "editor.minimap.enabled": false,
     "editor.scrollbar.vertical": "hidden",
@@ -21,4 +20,8 @@
     "editor.matchBrackets": "never",
     "breadcrumbs.symbolPath": "off",
     "editor.occurrencesHighlight": "off",
+    "workbench.editor.limit.value": 1,
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.enablePreview": false,
+    "zenMode.showTabs": "none",
 }
