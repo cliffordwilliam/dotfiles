@@ -9,19 +9,21 @@
     "zenMode.centerLayout": false,
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#ffffff15",
-        "editor.lineHighlightBorder": "#ffffff00",
-        "editor.selectionBackground": "#ffffff15",
-        "editor.selectionHighlightBackground": "#ffffff15"
+        "editor.lineHighlightBorder": "#ffffff00"
     },
     "zenMode.hideLineNumbers": false,
     "editor.guides.indentation": false,
     "editor.renderWhitespace": "none",
     "editor.lightbulb.enabled": "off",
     "editor.matchBrackets": "never",
-    "breadcrumbs.symbolPath": "off",
     "editor.occurrencesHighlight": "off",
     "workbench.editor.limit.value": 1,
     "workbench.editor.limit.enabled": true,
     "workbench.editor.enablePreview": false,
     "zenMode.showTabs": "none",
+    "workbench.tips.enabled": false,
+    "editor.showFoldingControls": "never",
+    "breadcrumbs.enabled": false,
+    "files.autoSave": "onFocusChange",
+    "editor.selectionHighlight": false,
 }
