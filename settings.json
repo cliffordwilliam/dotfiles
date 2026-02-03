@@ -9,7 +9,8 @@
     "zenMode.centerLayout": false,
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#ffffff15",
-        "editor.lineHighlightBorder": "#ffffff00"
+        "editor.lineHighlightBorder": "#ffffff00",
+        "editor.selectionBackground": "#ffffff30"
     },
     "zenMode.hideLineNumbers": false,
     "editor.guides.indentation": false,
