@@ -8,4 +8,15 @@
     "editor.stickyScroll.enabled": false,
     "terminal.integrated.stickyScroll.enabled": false,
     "zenMode.centerLayout": false,
+    "editor.renderLineHighlight": "all",
+    "workbench.colorCustomizations": {
+        "editor.lineHighlightBackground": "#ffffff15",
+        "editor.lineHighlightBorder": "#ffffff00"
+    },
+    "zenMode.hideLineNumbers": false,
+    "editor.guides.indentation": false,
+    "editor.renderWhitespace": "none",
+    "editor.lightbulb.enabled": "off",
+    "editor.matchBrackets": "never",
+    "breadcrumbs.symbolPath": "off",
 }
