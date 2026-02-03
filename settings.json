@@ -27,4 +27,5 @@
     "breadcrumbs.enabled": false,
     "files.autoSave": "onFocusChange",
     "editor.selectionHighlight": false,
+    "workbench.startupEditor": "none",
 }
