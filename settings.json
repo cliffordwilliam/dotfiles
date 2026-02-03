@@ -1,0 +1,11 @@
+{
+    "window.customTitleBarVisibility": "windowed",
+    "zenMode.showTabs": "none",
+    "editor.cursorBlinking": "solid",
+    "editor.minimap.enabled": false,
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.verticalScrollbarSize": 0,
+    "editor.stickyScroll.enabled": false,
+    "terminal.integrated.stickyScroll.enabled": false,
+    "zenMode.centerLayout": false,
+}
