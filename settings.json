@@ -19,4 +19,5 @@
     "editor.lightbulb.enabled": "off",
     "editor.matchBrackets": "never",
     "breadcrumbs.symbolPath": "off",
+    "editor.occurrencesHighlight": "off",
 }
