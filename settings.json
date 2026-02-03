@@ -8,10 +8,11 @@
     "editor.stickyScroll.enabled": false,
     "terminal.integrated.stickyScroll.enabled": false,
     "zenMode.centerLayout": false,
-    "editor.renderLineHighlight": "all",
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#ffffff15",
-        "editor.lineHighlightBorder": "#ffffff00"
+        "editor.lineHighlightBorder": "#ffffff00",
+        "editor.selectionBackground": "#ffffff15",
+        "editor.selectionHighlightBackground": "#ffffff15"
     },
     "zenMode.hideLineNumbers": false,
     "editor.guides.indentation": false,
