@@ -21,15 +21,6 @@ require("lazy").setup(
             config = function()
                 vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files)
             end
-        },
-        {
-            "akinsho/toggleterm.nvim",
-            version = "*",
-            opts = {
-                open_mapping = [[<leader>tt]],
-                direction = "float",
-                terminal_mappings = true
-            }
         }
     }
 )
