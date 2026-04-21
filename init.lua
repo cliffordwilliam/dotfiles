@@ -19,7 +19,11 @@ require("lazy").setup(
             "nvim-telescope/telescope.nvim",
             dependencies = {"nvim-lua/plenary.nvim"},
             config = function()
-                vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files)
+                vim.keymap.set("n", "<leader>ff", function()
+                    require("telescope.builtin").find_files(
+                            { hidden = true, file_ignore_patterns = { "^%.git/" } }
+                    )
+                end)
             end
         }
     }
