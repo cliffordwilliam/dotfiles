@@ -15,31 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
     {
-        {"NMAC427/guess-indent.nvim", opts = {}},
-        {
-            "lewis6991/gitsigns.nvim",
-            opts = {
-                signs = {
-                    add = {text = "+"},
-                    change = {text = "~"},
-                    delete = {text = "_"},
-                    topdelete = {text = "‾"},
-                    changedelete = {text = "~"}
-                }
-            }
-        },
-        {
-            "catppuccin/nvim",
-            name = "catppuccin",
-            priority = 1000,
-            config = function()
-                -- require("catppuccin").setup({
-                --     transparent_background = true,
-                -- })
-                vim.cmd.colorscheme "catppuccin"
-            end
-        },
-        {"typicode/bg.nvim", lazy = false},
         {
             "nvim-telescope/telescope.nvim",
             dependencies = {"nvim-lua/plenary.nvim"},
