@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+GHOSTTY_CONF_DIR="$HOME/.config/ghostty"
+GHOSTTY_CONF="$GHOSTTY_CONF_DIR/config"
+
+mkdir -p "$GHOSTTY_CONF_DIR"
+
+# Idempotent write: overwrites/creates the config with correct syntax
+cat > "$GHOSTTY_CONF" <<EOF
+background-opacity = 0.8
+background-blur = true
+background-opacity-cells = true
+EOF
+
+echo "Ghostty configured."
