@@ -7,6 +7,8 @@ GHOSTTY_CONF="$GHOSTTY_CONF_DIR/config"
 mkdir -p "$GHOSTTY_CONF_DIR"
 
 cat > "$GHOSTTY_CONF" <<'EOF'
+fullscreen = true
+theme = TokyoNight
 background-opacity = 0.8
 background-blur = 20
 EOF
