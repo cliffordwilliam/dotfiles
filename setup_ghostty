@@ -6,11 +6,9 @@ GHOSTTY_CONF="$GHOSTTY_CONF_DIR/config"
 
 mkdir -p "$GHOSTTY_CONF_DIR"
 
-# Idempotent write: overwrites/creates the config with correct syntax
-cat > "$GHOSTTY_CONF" <<EOF
+cat > "$GHOSTTY_CONF" <<'EOF'
 background-opacity = 0.8
-background-blur = true
-background-opacity-cells = true
+background-blur = 20
 EOF
 
 echo "Ghostty configured."
