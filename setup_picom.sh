@@ -14,7 +14,7 @@ cat > "$PICOM_CONF" <<'EOF'
 backend = "glx";
 vsync = true;
 shadow = false;
-fading = false;
+fading = true;
 inactive-opacity = 1.0;
 active-opacity = 1.0;
 frame-opacity = 1.0;
