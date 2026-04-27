@@ -13,19 +13,7 @@ mkdir -p "$PICOM_CONF_DIR"
 cat > "$PICOM_CONF" <<'EOF'
 backend = "glx";
 vsync = true;
-shadow = false;
 fading = true;
-inactive-opacity = 1.0;
-active-opacity = 1.0;
-frame-opacity = 1.0;
-blur-background = true;
-blur-method = "dual_kawase";
-blur-strength = 5;
-blur-background-exclude = [
-  "window_type = 'dock'",
-  "window_type = 'desktop'",
-  "class_g = 'slop'"
-];
 EOF
 
 # 3. Inject into i3 config (idempotent)
