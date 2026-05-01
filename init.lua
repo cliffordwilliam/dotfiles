@@ -1,4 +1,5 @@
 vim.o.signcolumn = "yes"
+vim.cmd.colorscheme "deep-ocean"
 vim.g.mapleader = " "
 vim.o.ignorecase = false
 vim.o.smartcase = false
@@ -22,14 +23,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Declare what dependencies I need here.
 require("lazy").setup(
     {
-        -- Grab theme.
-        {
-            "folke/tokyonight.nvim",
-            priority = 1000,
-            config = function()
-                vim.cmd.colorscheme "tokyonight-night"
-            end
-        },
         -- Grab file finder.
         {
             "nvim-telescope/telescope.nvim",
@@ -58,20 +51,20 @@ require("lazy").setup(
                     {
                         group = vim.api.nvim_create_augroup("lsp-attach", {clear = true}),
                         callback = function(event)
-                            -- gd 		    = go to definition.
+                            -- gd 		= go to definition.
                             vim.keymap.set(
                                 "n",
                                 "gd",
                                 require("telescope.builtin").lsp_definitions,
                                 {buffer = event.buf}
                             )
-                            -- gr 		    = go to references.
+                            -- gr 		= go to references.
                             vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, {buffer = event.buf})
                             -- space rn 	= rename.
                             vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {buffer = event.buf})
                             -- space e	 	= open error.
                             vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {buffer = event.buf})
-                            -- K 		    = show documentation.
+                            -- K 		= show documentation.
                             vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer = event.buf})
                         end
                     }
@@ -79,7 +72,8 @@ require("lazy").setup(
                 -- My LSP collections. Some of these needs external dependencies, like node runtime and so on.
                 local servers = {
                     lua_ls = {},
-                    ts_ls = {}
+                    ts_ls = {},
+		    clangd = {},
                 }
 
                 require("mason").setup()
