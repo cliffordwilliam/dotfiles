@@ -32,7 +32,7 @@ require("lazy").setup(
                     "n",
                     "<leader>ff",
                     function()
-                        require("telescope.builtin").find_files({hidden = true, file_ignore_patterns = {"^%.git/"}})
+                        require("telescope.builtin").find_files({hidden = true, file_ignore_patterns = {"^%.git/", "^vendor/"}})
                     end
                 )
             end
