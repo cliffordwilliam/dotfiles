@@ -1,5 +1,3 @@
-vim.o.signcolumn = "yes"
-vim.cmd.colorscheme "deep-ocean"
 vim.g.mapleader = " "
 vim.o.ignorecase = false
 vim.o.smartcase = false
@@ -22,19 +20,53 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
     {
+        -- Grab theme.
+        {
+            "folke/tokyonight.nvim",
+            priority = 1000,
+            config = function()
+                vim.cmd.colorscheme "tokyonight-night"
+            end
+        },
+        -- Grab terminal.
+        {
+            "akinsho/toggleterm.nvim",
+            version = "*",
+            config = function()
+                require("toggleterm").setup({
+                   -- c \ = toggle terminal.
+                   open_mapping = [[<c-\>]],
+		})
+            end
+        },
         -- Grab file finder.
         {
             "nvim-telescope/telescope.nvim",
             dependencies = {"nvim-lua/plenary.nvim"},
             config = function()
+                local builtin = require("telescope.builtin")
+                -- ff = find files.
                 vim.keymap.set(
                     "n",
                     "<leader>ff",
                     function()
-                        require("telescope.builtin").find_files(
+                        builtin.find_files(
                             {
                                 hidden = true,
-                                file_ignore_patterns = {"^%.git/", "^vendor/"},
+                                file_ignore_patterns = {"^%.git/", "^vendor/"}
+                            }
+                        )
+                    end
+                )
+                -- This one needs ripgrep.
+                -- fg = find texts.
+                vim.keymap.set(
+                    "n",
+                    "<leader>fg",
+                    function()
+                        builtin.live_grep(
+                            {
+                                file_ignore_patterns = {"^%.git/", "^vendor/"}
                             }
                         )
                     end
@@ -72,6 +104,7 @@ require("lazy").setup(
                         end
                     }
                 )
+                -- Some needs external dependencies like node runtime.
                 local servers = {
                     lua_ls = {},
                     ts_ls = {},
